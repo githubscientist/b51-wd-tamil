@@ -1,0 +1,10 @@
+Java script fundamentals
+
+- variables & datatypes
+- operators & expressions
+- conditional statements
+- looping statements
+- functions - user defined & library
+- arrays
+- strings
+- object
