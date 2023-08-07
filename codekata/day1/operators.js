@@ -61,3 +61,14 @@
 // let hasAadhar = true;
 
 // console.log(!hasAadhar);
+
+/*
+    Bitwise operators:
+
+        & bitwise AND
+        | bitwise OR
+        ^ bitwise EX-OR
+        << bitwise left-shift
+        >> bitwise right-shift
+        ~ bitwise complement or negation
+*/
