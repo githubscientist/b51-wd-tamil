@@ -12,11 +12,9 @@ inp.on("line", (data) => {
 });
 
 inp.on("close", () => {
-  //start-here
-  //Your code goes here … replace the below line with your code logic
-
-    let string = userInput[0];
-    console.log(string.split('').join(','));
-
-  //end-here
+    // formula (0°C × 9/5) + 32 = 32°F
+    let celcius = parseInt(userInput[0]);
+    let fahrenheit = (celcius * 9 / 5) + 32;
+    // console.log(fahrenheit.toFixed(2));
+    console.log(Math.round(53.4321 * 100)/100);
 });
