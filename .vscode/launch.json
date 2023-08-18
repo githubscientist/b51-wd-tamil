@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/codekata/day2/loops.js"
+            "program": "${workspaceFolder}/roadmap/day2/Main.js"
         }
     ]
 }
