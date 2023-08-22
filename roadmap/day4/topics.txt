@@ -1,0 +1,4 @@
+Hoisting & scope
+Introduction to functions
+function & return keyword
+types of function
