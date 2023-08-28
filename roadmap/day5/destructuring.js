@@ -80,14 +80,14 @@
 // console.log(writer);
 
 
-function callMe(values) {
-    let weight = values[0];
-    let height = values[1];
+// function callMe(values) {
+//     let weight = values[0];
+//     let height = values[1];
 
-    console.log(weight, height);
-}
+//     console.log(weight, height);
+// }
 
-callMe([65, 175]);
+// callMe([65, 175]);
 
 // function callMe([weight, height]) {
 //     console.log(weight, height);
@@ -95,8 +95,8 @@ callMe([65, 175]);
 
 // callMe([65, 175]);
 
-// function callMe({weight, height}) {
-//     console.log(weight, height);
-// }
+function callMe({weight, height}) {
+    console.log(weight, height);
+}
 
-// callMe({weight: 65, height: 175});
+callMe({weight: 65, height: 175});
