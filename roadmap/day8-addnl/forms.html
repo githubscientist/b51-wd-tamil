@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML Forms</title>
+    </head>
+    <body>
+        <!-- HTML Forms: to allow the users to input and submit the data -->
+        <!-- user registration, login, data submission, etc...  -->
+        <form method="get">
+            <div>
+                <label for="name">Name: </label>
+                <input 
+                    type="text" placeholder="type your name..." 
+                    id="name"
+                    name="name"
+                    value="sathish"
+                    disabled
+                >
+            </div>
+
+            <div>
+                <label for="email">Email: </label>
+                <input type="email" placeholder="type your email..." id="email"
+                name="email"
+                >
+            </div>
+
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" placeholder="type your password..." id="password"
+                name="password"
+                required
+                >
+            </div>
+
+            <div>
+                <!-- radio buttons -->
+                <label>Gender: </label>
+                <input 
+                    type="radio"
+                    name="gender" 
+                    id="male" 
+                    value="male"
+                    disabled
+                >
+                <label for="male">Male</label>
+
+                <input 
+                    type="radio" name="gender" id="female" value="female" checked disabled
+                >
+                <label for="female">Female</label>
+            </div>
+
+            <div>
+                <input 
+                    type="checkbox"
+                    name="choice"
+                    value="option1"
+                >
+                <label>Option 1</label>
+
+                <input type="checkbox" name="choice" value="option2">
+                <label>Option 2</label>
+
+                <input type="checkbox" name="choice" value="option3">
+                <label>Option 3</label>
+
+                <input type="checkbox" name="choice" value="option4" checked>
+                <label>Option 4</label>
+
+                <input type="checkbox" name="choice" value="option5">
+                <label>Option 5</label>
+            </div>
+
+            <div>
+                <input type="color" name="color">
+            </div>
+
+            <div>
+                <input type="date" min="2023-09-04">
+            </div>
+
+            <div>
+                <input type="datetime-local">
+            </div>
+
+            <div>
+                <select name="country">
+                    <option>--Select--</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                </select>
+            </div>
+
+            <div>
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </body>
+</html>
