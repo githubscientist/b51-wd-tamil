@@ -1,0 +1,23 @@
+#headingID {
+    color: blue;
+}
+
+.headingClass {
+    color: rgb(0, 255, 4) !important;
+}
+
+#headingID {
+    color: red;
+}
+
+img {
+    display: block;
+}
+
+* {
+    font-size: 24px;
+}
+
+div {
+    display: inline;
+}

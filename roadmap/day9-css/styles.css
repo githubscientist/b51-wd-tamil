@@ -1,0 +1,63 @@
+/* button {
+    color: white;
+    background-color: red;
+} */
+
+/* id selector */
+/* #leftAlign1 {
+    text-align: left;
+}
+
+#leftAlign2 {
+    text-align: left;
+}
+
+#leftAlign3 {
+    text-align: left;
+} */
+
+/* .leftAlign {
+    text-align: left;
+} */
+
+/* class selector */
+
+
+/* #header {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: left;
+} */
+
+/* Precedence Order */
+
+/* 
+    Ways:
+
+    1. Inline Styles
+    2. Internal Styles
+    3. External Styles
+
+    Selectors:
+
+    1. element/tag selector
+    2. id selectors
+    3. class selectors
+
+    Order:
+
+    1. Inline Styles
+    2. Internal Stylesheet
+    3. ID selectors
+    4. Class selectors
+    5. Element or Tag selectors
+    6. External Stylesheets
+    7. Universal or global selector
+
+*/
+
+/* brand kit */
+
+/* * {
+    text-align: center;
+} */
