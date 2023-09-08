@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center; /* horizontal alignment */
+    align-items: center; /* vertical alignment */
+    height: 300px;
+    border: 2px solid black;
+}
+         
+.green, .red, .blue {
+    padding: 20px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.green {
+    background-color: green;
+    flex-grow: 1;
+    order: 2;
+}
+
+.blue {
+    background-color: blue;
+    flex-grow: 2;
+    order: 3;
+}
+
+.red {
+    background-color: red;
+    flex-grow: 3;
+    order: 1;
+}
