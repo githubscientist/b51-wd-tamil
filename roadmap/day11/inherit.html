@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+            .parent {
+                font-family: Arial, Helvetica, sans-serif;
+                color: blue;
+                background-color: lightgray;
+                margin: 20px;
+                padding: 10px;
+            }
+
+            .child {
+                font-family: inherit;
+                color: inherit;
+                background-color: inherit;
+                margin: 40px;
+            }
+
+            .grandchild {
+                margin: inherit;
+            }
+
+            /* 
+                Properties that can be inherited 
+                    - font properties 
+                    - text properties
+                    - list properties 
+            */
+        </style>
+    </head>
+    <body>
+        <div class="parent">
+            <p>This is the parent element.</p>
+            <div class="child">
+                <p>This is the child element.</p>
+                <div class="grandchild">
+                    <p>This is the grandchild element.</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
