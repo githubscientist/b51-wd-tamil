@@ -47,7 +47,7 @@ main {
     padding-left: 40px;
 } */
 
-.container {
+/* .container {
     position: relative;
     width: 400px;
     border: 1px solid black;
@@ -66,10 +66,10 @@ main {
 }
 
 .relativeDiv {
-    position: absolute;
+    position: relative;
     background-color: blueviolet;
     width: 100px;
     height: 100px;
     top: 50px;
     left: 50px;
-}
+} */

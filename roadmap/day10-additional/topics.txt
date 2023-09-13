@@ -1,3 +1,7 @@
+position property: fixed, static, relative, absolute, sticky
+parent inherit 
+gradient
+
 overflow - hidden, scroll, auto, visible
 dropbox
 measurements 

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Measurements</title>
+
+        <style>
+            .button1 {
+                width: 72pt;
+            }
+
+            .button2 {
+                width: 1in;
+            }
+
+            .button3 {
+                width: 2.5cm;
+            }
+
+            .button4 {
+                width: 95px;
+            }
+
+            /* 1 pt = 1.33 px; 72pt = 72 x 1.33 px*/
+
+            /* 12 inches = 30 cm; 1 inch = 30/12 = 5/2 = 2.5 */
+
+            .button5 {
+                /* width: 25%; */
+                width: 7em;
+                /* 1 em = 16 pixels */
+                /* 1/16 * 95.76 em */
+                /* 0.0625 * 95.76 em */
+                /* 5.985 em */
+            }
+
+            html {
+                font-size: 24px;
+            }
+
+            .button6 {
+                font-size: 1.5rem;
+            }
+
+            .button7 {
+                font-size: 36px;
+            }
+
+            /* rem: root em or relative em. em -> relative to the parent but rem is relative to the root element <html> */
+        </style>
+    </head>
+    <body>
+        <!-- px: smallest unit of display on a screen. fixed size unit -->
+
+        <button class="button1">Click Me</button> <br />
+
+        <button class="button2">Click Me</button> <br />
+
+        <button class="button3">Click Me</button> <br />
+
+        <button class="button4">Click Me</button> <br />
+
+        <!-- pt: point; 1 pt = 1/72 of an inch -->
+        <!-- in: inches; -->
+        <!-- cm: centimeters -->
+
+        <!-- above all: absolute units -->
+
+        <!-- below: relative units -->
+
+        <button class="button5">Click Me</button> <br />
+
+        <div style="font-size: 95px;">
+            <button class="button6">Click Me</button>
+        </div>
+
+        <button class="button7">Click Me</button> <br />
+    </body>
+</html>

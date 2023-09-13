@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Media Queries</title>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <style>
+            body {
+                font-size: 48px;
+            }
+
+            /* media query */
+            @media (max-width: 512px){
+                body {
+                    font-size: 24px;
+                }
+            }
+
+            .icon {
+                display: none;
+            }
+
+            @media (max-width: 512px) {
+                .navbar {
+                    display: none;
+                }
+
+                .icon {
+                    display: block;
+                }
+            }
+
+            /* screens with width between 513px and 768px */
+            @media (min-width: 513px) and (max-width: 768px) {
+
+            }
+
+            /* landscape */
+            @media (orientation: landscape){
+
+            }
+
+            /* portrait */
+            @media (orientation: portrait){
+
+            }
+        </style>
+    </head>
+    <body>
+        <span class="material-symbols-outlined icon">
+            menu
+        </span>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+
+        <p>This content changes from 48px to 24px in the smaller screens</p>
+
+        <img src="https://www.dropbox.com/scl/fi/acnxaplrywxextw4g7bfo/pakata-goh-EJMTKCZ00I0-unsplash.jpg?rlkey=xsivopljc0697q8z5586eka05&raw=1" width="200px">
+    </body>
+</html>
