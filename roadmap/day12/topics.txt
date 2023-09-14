@@ -1,0 +1,14 @@
+What is RWD?
+    - its an approach to web design that aims to make the web pages render well on a variety of devices and different window / screen sizes.
+
+What is the mobile-first approach?
+    - design strategy
+    - from where we need to start designing a web page or building a website or an application for mobile devices and then eventually enhance it for the larger screens.
+    
+Bootstrap
+ - How to set up bootstrap?
+ - What is the layout?
+ - what is container, container-fluid & container with breakpoints?
+ - What is a grid in Bootstrap?
+ - what is a column prefix & its use and maximum columns for a row?
+ - how to do nested columns and column ordering?
