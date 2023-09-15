@@ -1,0 +1,11 @@
+What is DOM?
+    - Document Object Model (DOM) - Programming interface and representation of a web page's structure.
+    - Dynamic - without refreshing the webpage, the contents will be updated
+    - Manipulate the DOM - add, modify, remove elements, attributes, content
+    - Event Handling
+createElement, 
+setAttribute
+getElementById, 
+querySelector vs querySelectorAll
+innerHTML vs innerText
+appendChild vs append
