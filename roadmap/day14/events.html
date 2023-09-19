@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Event Listeners</title>
+    </head>
+    <body>
+        <!-- click event listener -->
+        <!-- <button id="registerButton" onclick="registerButtonClickHandler()">
+            Register
+        </button>
+
+        <script>
+            function registerButtonClickHandler(){
+                console.log('register button clicked');
+            }
+        </script> -->
+
+        <!-- <button id="registerButton">
+            Register
+        </button>
+        
+        <script>
+            function registerButtonClickHandler() {
+                console.log('register button clicked');
+            }
+
+            function registerButtonDoubleClickHandler(){
+                console.log('please wait! registration is in progress.!');
+            }
+
+            let registerButton = document.getElementById('registerButton');
+            registerButton.addEventListener('click', registerButtonClickHandler);
+
+            registerButton.addEventListener('dblclick', registerButtonDoubleClickHandler); -->
+
+            
+        <!-- </script> -->
+
+        <!-- <span id="spanText">This is a span text</span>
+
+        <script>
+            let spanText = document.getElementById('spanText');
+
+            // attach an event listener to the spanText
+            spanText.addEventListener('mouseover', function(){
+                spanText.style.color = 'red';
+            });
+
+            spanText.addEventListener('mouseout', function(){
+                spanText.style.color = 'black';
+            });
+        </script> -->
+
+        <!-- use a textarea input element to create a twitter character counter -->
+        <textarea rows="5" cols="50" placeholder="compose your tweet..." id="tweetInput"></textarea>
+        <p id="characterCount">Character Count: 0</p>
+
+        <script>
+            function updateCharacterCount() {
+                // get the current number of characters in the textinput
+                let currentLength = tweetInput.value.length;
+                characterCount.textContent = `Character Count: ${currentLength}`;
+            }
+
+            // get the references of the elements
+            let tweetInput = document.getElementById('tweetInput');
+            let characterCount = document.getElementById('characterCount');
+
+            // attach the event listener
+            tweetInput.addEventListener('input', updateCharacterCount);
+        </script>
+    </body>
+</html>

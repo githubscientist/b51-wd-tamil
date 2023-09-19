@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM - Day 2 - Document Vs Window</title>
+    </head>
+    <body>
+        <script>
+        //   console.log(window);  
+        // console.log(window.location);
+        // console.log(window.location.href); // to get the hyper link address
+        // console.log(window.location.hostname); // to get the hardware ip address or domain name  
+        // console.log(window.location.origin); // hostname + port number
+        // console.log(window.location.protocol); // protocol
+        // console.log(window.location.host);
+        // console.log(window.location);
+
+        // console.log(window);
+        window.localStorage.setItem('username', 'sathish');
+        localStorage.setItem('theme', 'light');
+
+        const recentSearches = [
+            {
+                title: 'laptops',
+                similarSearches: ['laptops price', 'cheap laptops', 'best laptops', 'top 10 laptops brands']
+            },
+            {
+                title: 'mobile phones',
+                similarSearches: ['best mobile phones', 'mobile phones below 5000 rupees', 'new mobile phones released in 2023']
+            }
+        ];
+
+        // to store an item in the localstorage
+        localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+
+
+        // to get an item from the localstorage
+        let recentSearchesJSON = localStorage.getItem('recentSearches');
+
+        const recentSearchesObject = JSON.parse(recentSearchesJSON);
+
+        console.log(recentSearchesObject[1].similarSearches);
+
+        // to remove an item from the localstorage
+        localStorage.removeItem('username');
+
+        // to clear all the items from the localstorage
+        localStorage.clear();
+        </script>
+    </body>
+</html>
