@@ -1,0 +1,11 @@
+What is DOM?
+createElement, 
+setAttribute
+getElementById, 
+querySelector vs querySelectorAll
+innerHTML vs innerText
+appendChild vs append
+Window - Common Util functions
+setTimeout vs setInterval
+prompt, Alert, Confirm
+working with events
