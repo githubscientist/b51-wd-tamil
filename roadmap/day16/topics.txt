@@ -1,0 +1,8 @@
+Callback
+    - refers to a function that is passed as an argument to another function
+    - so that the function can be executed or "called back" at a later point in the program execution.
+    
+What's the callback? - call stack, web API, event loop, queue
+Use & its purpose of the callback
+Pain of callback
+Session reference  - http://latentflip.com/loupe/

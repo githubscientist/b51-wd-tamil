@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width='device-width', initial-scale=1.0">
+        <title>Event Handling - Callbacks</title>
+    </head>
+    <body>
+        <button id="clickMeButton">Click Me</button>
+
+        <script>
+            function anotherFunction(){
+                console.log('another function called');
+            }
+
+            function handleClick(event, callback){
+                console.log(event);
+                console.log('button clicked');
+                callback();
+            }
+
+            // get the reference of the button
+            let clickMeButton = document.getElementById('clickMeButton');
+
+            clickMeButton.addEventListener('click', function(event){
+                handleClick(event, anotherFunction);
+            });
+        </script>
+    </body>
+</html>
