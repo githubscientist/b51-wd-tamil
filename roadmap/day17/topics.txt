@@ -1,0 +1,6 @@
+Promise
+ - What is a promise?
+ - Promise States
+ - Promise chain
+ - promise.all()
+ - Use of fetch() & then()

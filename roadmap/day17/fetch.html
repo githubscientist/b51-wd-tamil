@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fetch</title>
+    </head>
+    <body>
+        <h1>Chuck Norris Joke Generator</h1>
+        <button id="getJokeButton">
+            Get Joke
+        </button>
+        <div id="jokeContainer">
+            <p id="jokeText"></p>
+        </div>
+        <script>
+            // fetch() library call returns a promise
+            // fetch('https://jsonplaceholder.typicode.com/todos')
+            //     .then((response) => {
+            //         return response.json();
+            //     })
+            //     .then((data) => {
+            //         return data.slice(50,);
+            //     })
+            //     .then((data) => {
+            //         console.log(data);
+            //     })
+
+            // task using fetch()
+            // create a webpage that fetches and displays chuck norris jokes from the "Chuck Norris jokes api". users can click a button to get a new random chuck norris joke.
+            let fetchJoke = () => {
+                fetch('https://api.chucknorris.io/jokes/random')
+                    .then(response => response.json())
+                    .then(data => {
+                        // console.log(data.value);
+                        jokeText.textContent = data.value;
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    })
+            }
+
+            let getJokeButton = document.getElementById('getJokeButton');
+            let jokeText = document.getElementById('jokeText');
+
+            getJokeButton.addEventListener('click', fetchJoke);
+
+            fetchJoke();
+        </script>
+    </body>
+</html>
