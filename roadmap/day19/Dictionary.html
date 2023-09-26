@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dictionary App</title>
+
+        <!-- import bootstrap css cdn -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body>
+        
+        <div class="container mt-4">
+            <h1>Dictionary</h1>
+            <label>Enter a word below to find the meaning of the word</label>
+            <div class="row">
+                <div class="col-sm-8">
+                    <form id="dictform" class="form-inline">
+                        <div class="form-group">
+                            <input 
+                            type="text" placeholder="type a word here..."
+                            class="form-control"
+                            id="wordinput"
+                            >
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-secondary">Search</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="meaningforward" class="col-12 mt-4">
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- import bootstrap js cdn -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+        <script src="./script.js"></script>
+    </body>
+</html>

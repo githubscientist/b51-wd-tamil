@@ -27,6 +27,8 @@
                 let response = await fetch(`https://jsonplaceholder.typicode.com/posts`);
                 let posts = await response.json();
 
+                console.log(posts);
+
                 let postList = document.getElementById('postList');
 
                 posts.forEach((post) => {
@@ -42,6 +44,8 @@
                     let link = document.createElement('a');
                     link.textContent = post.title;
                     link.href = `post.html?id=${post.id}`;
+
+                    console.log(link);
 
                     postParagraph.appendChild(link);
                     postList.appendChild(postParagraph);
