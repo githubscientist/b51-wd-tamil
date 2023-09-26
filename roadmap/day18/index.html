@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Attaching Events</title>
+    </head>
+    <body>
+        <!-- <button id="clickButton">Click & Double Click</button> -->
+
+        <script>
+
+
+            // let button = document.getElementById('clickButton');
+            let button = document.createElement('button');
+
+            button.textContent = 'Click & Double Click';
+
+            button.setAttribute('id', 'clickButton');
+
+            button.addEventListener('click', function(){
+                console.log('button clicked');
+            })
+
+            button.addEventListener('dblclick', function(){
+                console.log('button double clicked');
+            })
+
+            document.body.appendChild(button);
+        </script>
+    </body>
+</html>

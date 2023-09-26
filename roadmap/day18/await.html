@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Chaining</title>
+</head>
+
+<body>
+
+    <button onclick="fetchData()">Fetch Data</button>
+
+    <script>
+
+        /*
+            API Links:
+
+            Reference Guide: 
+                https://jsonplaceholder.typicode.com/guide/
+
+            Access all the users: 
+                https://jsonplaceholder.typicode.com/users
+
+            Access a specific user: 
+                https://jsonplaceholder.typicode.com/users/1
+
+            Access all the posts: 
+                https://jsonplaceholder.typicode.com/posts
+
+            Access all the posts posted by a specific user: 
+                https://jsonplaceholder.typicode.com/posts?userId=1
+                https://jsonplaceholder.typicode.com/posts?userId=2
+            
+            Access all the comments:
+                https://jsonplaceholder.typicode.com/comments
+
+            Access all the comments of a specific post:
+
+                https://jsonplaceholder.typicode.com/comments?postId=1
+                https://jsonplaceholder.typicode.com/comments?postId=2
+        */
+
+        // Task: get all the comments posted on the first post of a user with userId 1
+        async function fetchData(){
+            let userId = 1;
+            console.log('fetching data...');
+            let response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
+            let user = await response.json();
+
+            console.log(user);
+
+            let postsResponse = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${user.id}`);
+            let posts = await postsResponse.json();
+
+            console.log(posts);
+
+            let commentsResponse = await fetch(`https://jsonplaceholder.typicode.com/comments?postId=${posts[0].id}`);
+            let comments = await commentsResponse.json();
+
+            console.log(comments);
+
+            console.log(comments[0]);
+        }
+    </script>
+</body>
+
+</html>

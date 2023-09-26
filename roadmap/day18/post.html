@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Post Details</title>
+    </head>
+    <body>
+        <div>
+            <h1>Post Details</h1>
+            <div id="postDetails">
+
+            </div>
+
+            <h2>Author Details: </h2>
+            <div id="userDetails">
+
+            </div>
+            <h2>Comments:</h2>
+            <div id="commentDetails">
+
+            </div>
+        </div>
+
+        <script>
+            async function fetchPostDetails(){
+                let urlParams = new URLSearchParams(window.location.search);
+                let postId = urlParams.get('id');
+
+                let postResponse = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`);
+                let post = await postResponse.json();
+
+                let userResponse = await fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`);
+                let user = await userResponse.json();
+
+                let commentsResponse = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`);
+                let comments = await commentsResponse.json();
+
+                console.log(comments);
+                console.log(user);
+                console.log(post);
+
+                let postDetails = document.getElementById('postDetails');
+
+                let postTitle = document.createElement('h2');
+                postTitle.textContent = post.title;
+                
+                let postBody = document.createElement('p');
+                postBody.textContent = post.body;
+
+                postDetails.append(postTitle, postBody);
+
+                let userDetails = document.getElementById('userDetails');
+                let userName = document.createElement('p');
+                userName.textContent = `Author: ${user.name}`;
+
+                let userEmail = document.createElement('p');
+                userEmail.textContent = `Email: ${user.email}`;
+
+                userDetails.append(userName, userEmail);
+            
+                let commentDetails = document.getElementById('commentDetails');
+
+                comments.forEach((comment) => {
+                    let commentItem = document.createElement('div');
+                    commentItem.innerHTML = `
+                    <p>Name: ${comment.name}</p>
+                    <p>Email: ${comment.email}</p>
+                    <p>Comment: ${comment.body}</p>
+                    <hr>
+                    `;
+                    commentDetails.appendChild(commentItem);
+                })
+
+            }
+
+            fetchPostDetails();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- 
+            Task: 
+                - create a html page
+                - show all the blog posts in the page https://jsonplaceholder.typicode.com/posts/
+                - for every post:
+                    - show the title,
+                    - show the description
+                - if any of the blog post is clicked, then show the blog post content like title and description + the user details + list of all the comments below the blog post
+         -->
+         <div>
+            <h1>Blogs</h1>
+            <div id="postList">
+
+            </div>
+         </div>
+
+         <script>
+            async function fetchPosts(){
+                let response = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+                let posts = await response.json();
+
+                let postList = document.getElementById('postList');
+
+                posts.forEach((post) => {
+                    // let listItem = document.createElement('li');
+                    // let link = document.createElement('a');
+                    // link.textContent = post.title;
+                    // link.href = `post.html?id=${post.id}`;
+                    // listItem.appendChild(link);
+                    // postList.appendChild(listItem);
+
+                    let postParagraph = document.createElement('p');
+
+                    let link = document.createElement('a');
+                    link.textContent = post.title;
+                    link.href = `post.html?id=${post.id}`;
+
+                    postParagraph.appendChild(link);
+                    postList.appendChild(postParagraph);
+
+                    let contentParagraph = document.createElement('p');
+                    contentParagraph.textContent = post.body;
+
+                    postList.appendChild(contentParagraph);
+
+                    let ruler = document.createElement('hr');
+                    postList.appendChild(ruler);
+                })
+            }
+
+            fetchPosts();
+         </script>
+    </body>
+</html>
