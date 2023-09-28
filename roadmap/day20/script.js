@@ -1,4 +1,26 @@
-let postID;
+let readPostsTable = document.createElement('div');
+
+readPostsTable.innerHTML = `<h2>Read All Posts <button id="createPostButton">+ Create a Post</button></h2>
+        <!-- display all the posts as a table -->
+        <table id="posts-table">
+            <thead>
+                <tr>
+                    <th>USER ID</th>
+                    <th>POST ID</th>
+                    <th>TITLE</th>
+                    <th>DESCRIPTION</th>
+                    <th>Edit POST</th>
+                    <th>Delete POST</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            </tbody>
+        </table>`;
+
+document.body.appendChild(readPostsTable);
+
 function deletePost(postId) {
     fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
         method: 'DELETE',
@@ -9,8 +31,6 @@ function deletePost(postId) {
 }
 
 function editPost(postId) {
-
-    postID = postId;
     // show the edit/update post form
     document.querySelector('#editPostBlock').style.display = 'block';
 
@@ -28,6 +48,9 @@ function editPost(postId) {
             editPostID.value = post.id;
             editPostTitle.value = post.title;
             editPostBody.value = post.body;
+
+            editUserID.setAttribute('disabled', 'true');
+            editPostID.setAttribute('disabled', 'true');
         });
 }
 
@@ -142,7 +165,7 @@ async function updatePost(event) {
     try {
         // console.log(postID);
         // make the call
-        let postedJSON = await fetch(`https://jsonplaceholder.typicode.com/posts/${postID}`, {
+        let postedJSON = await fetch(`https://jsonplaceholder.typicode.com/posts/${editPostID.value}`, {
             method: 'PUT',
             body: JSON.stringify(updatedPost),
             headers: {
