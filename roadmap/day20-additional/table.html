@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Table DOM</title>
+    </head>
+    <body>
+        <form id="form">
+            <div>
+                <input placeholder="first name..." id="firstname">
+            </div>
+            <div>
+                <input placeholder="last name..." id="lastname">
+            </div>
+            <div>
+                <input placeholder="address..." id="address">
+            </div>
+            <div>
+                <input type="number" maxlength="6" minlength="6" placeholder="pincode..." id="pincode">
+            </div>
+            <div>
+                <label>Male<input type="radio" name="gender" value="male"></label>
+                <label>Female<input type="radio" name="gender" value="female"></label>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <table id="table">
+            
+        </table>
+
+        <script>
+            let form = document.getElementById('form');
+            let table = document.getElementById('table');
+
+            form.addEventListener('submit', function(event){
+                event.preventDefault();
+                // get all the values of the elements
+                let firstname = document.getElementById('firstname');
+                let lastname = document.getElementById('lastname');
+                let address = document.getElementById('address');
+                let pincode = document.getElementById('pincode');
+                let gender = document.getElementsByName('gender');
+                let genderValue = gender[0].selected ? 'male' : 'female';
+
+                let row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${firstname.value}</td>
+                    <td>${lastname.value}</td>
+                    <td>${address.value}</td>
+                    <td>${pincode.value}</td>
+                    <td>${genderValue}</td>
+                `;
+                
+                table.appendChild(row);
+
+            });
+        </script>
+    </body>
+</html>

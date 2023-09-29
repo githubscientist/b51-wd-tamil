@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <select multiple id="fruitDropdown">
+            <option>Apple</option>
+            <option>Banana</option>
+            <option>Cherry</option>
+            <option>Orange</option>
+            <option>Strawberry</option>
+            <option>Watermelon</option>
+        </select>
+
+        <button id="submitButton">Submit</button>
+
+        <script>
+            let submitButton = document.getElementById('submitButton');
+
+            submitButton.addEventListener('click', function(){
+                // select the dropdown
+                let fruitDropdown = document.getElementById('fruitDropdown');
+
+                let selectedFruits = [];
+
+                for(let i=0; i<fruitDropdown.options.length; i++){
+                    if(fruitDropdown.options[i].selected){
+                        selectedFruits.push(fruitDropdown.options[i].value);
+                    }
+                }
+
+                console.log(selectedFruits.join(' '));
+            });
+
+            let fruitDropdown = document.getElementById('fruitDropdown');
+
+            fruitDropdown.addEventListener('change', function(){
+
+                let selectedFruits = [];
+
+                for (let i = 0; i < fruitDropdown.options.length; i++) {
+                    if (fruitDropdown.options[i].selected) {
+                        selectedFruits.push(fruitDropdown.options[i].value);
+                    }
+                }
+
+                if(selectedFruits.length < 2){
+                    alert('please select atleast 2');
+                } else if(selectedFruits.length > 2){
+                    alert('please select only two fruits');
+                }
+            });
+
+        </script>
+    </body>
+</html>

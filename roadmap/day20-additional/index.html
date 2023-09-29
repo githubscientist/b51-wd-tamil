@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Doubt Sessions</title>
+    </head>
+    <body>
+        <script>
+            let paragraph = document.createElement('p');
+
+            paragraph.innerHTML = `<span id="charI">I</span>n this HTML tutorial, you will find more than 200 examples. With our online "Try it Yourself" editor, you can edit and test each example yourself!`;
+
+            // paragraph.style.width = "200px";
+            paragraph.style.fontSize = "32px";
+
+            document.body.appendChild(paragraph);
+
+            let charI = document.getElementById("charI");
+            charI.style.color = 'blue';
+            charI.style.fontSize = "100px";
+            
+        </script>
+    </body>
+</html>
