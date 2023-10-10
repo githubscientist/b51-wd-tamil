@@ -16,4 +16,9 @@ class DOB {
 
 // console.log(`${dob1.day}st, ${dob1.month} ${dob1.year}`);
 
-module.exports = DOB;
+module.exports = {
+    DOB
+};
+
+// lexical scoping: static scoping
+// it determines the scope of a variable or identifier based on where it is declared rather than where it is executed during runtime.

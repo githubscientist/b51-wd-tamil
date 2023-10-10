@@ -1,4 +1,4 @@
-let DOB = require('./classes');
+let {DOB} = require('./classes');
 
 let dob1 = new DOB(31, 'January', 2021);
 
