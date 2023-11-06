@@ -70,11 +70,133 @@
 
     2. DML: Data Manipulation Language
         a. INSERT: To insert a new record
+
+        - create a database called nycflights13.
+
+        query: create database nycflights13;
+    
+        - create a table called flights with the following columns:
+            - year: int, not null
+            - month: int, not null
+            - day: int, not null
+            - dep_time: int, not null
+            - sched_dep_time: int, not null
+            - dep_delay: int, not null
+            - arr_time: int, not null
+            - sched_arr_time: int, not null
+            - arr_delay: int, not null
+            - carrier: varchar(255), not null
+            - flight: int, not null
+            - tailnum: varchar(255), not null
+        
+        query: create table flights (year int not null, month int not null, day int not null, dep_time int not null, sched_dep_time int not null, dep_delay int not null, arr_time int not null, sched_arr_time int not null, arr_delay int not null, carrier varchar(255) not null, flight int not null, tailnum varchar(255) not null);
+        
+        - insert the following records into the table:
+            1. 2013, 1, 1, 517, 515, 2, 830, 819, 11, "UA", 1545, "N14228"
+            2. 2013, 1, 1, 533, 529, 4, 850, 830, 20, "UA", 1714, "N24211"
+            3. 2013, 1, 1, 542, 540, 2, 923, 850, 33, "AA", 1141, "N619AA"
+            4. 2013, 1, 1, 544, 545, -1, 1004, 1022, -18, "B6", 725, "N804JB"
+            5. 2013, 1, 1, 554, 600, -6, 812, 837, -25, "DL", 461, "N668DN"
+            6. 2013, 1, 1, 554, 558, -4, 740, 728, 12, "UA", 1696, "N39463"
+
+            query: insert into flights values 
+            (2013, 1, 1, 517, 515, 2, 830, 819, 11, "UA", 1545, "N14228"),
+            (2013, 1, 1, 533, 529, 4, 850, 830, 20, "UA", 1714, "N24211"),
+            (2013, 1, 1, 542, 540, 2, 923, 850, 33, "AA", 1141, "N619AA"),
+            (2013, 1, 1, 544, 545, -1, 1004, 1022, -18, "B6", 725, "N804JB"),
+            (2013, 1, 1, 554, 600, -6, 812, 837, -25, "DL", 461, "N668DN"),
+            (2013, 1, 1, 554, 558, -4, 740, 728, 12, "UA", 1696, "N39463");
+
+            Syntax:
+
+            insert into <table_name> values (<value1>, <value2>, ...);
+
+        
         b. UPDATE: To update an existing record
         c. DELETE: To delete an existing record
 
     3. DQL: Data Query Language
         a. SELECT: To fetch data from the database
+
+        - view all the records of the table
+
+        query: select * from flights;
+
+        - view all the records of all the columns of the table
+
+        query: select * from flights;
+
+        - view all the records of the selected columns of the table
+
+        query: select <column_name1>, <column_name2>, ... from flights;
+
+        example: select flight, sched_dep_time, sched_arr_time, dep_delay from flights;
+
+        - from payments table of classicmodels database, select the payments made after "2005-01-01".
+
+        query: select * from payments where paymentDate >= "2005-01-01";
+
+        - from payments table, select the payments made with amount greater than 50000.
+
+        query: select * from payments where amount > 50000;
+
+        - from payments table, select the payments made after "2005-01-01" with amount greater than 50000.
+
+        query: select * from payments where paymentDate >= "2005-01-01" and amount > 50000;
+
+        - from customer table, list all the countryies.
+
+        query: select country from customers;
+
+        - from customers table, list the unique country names.
+
+        query: select distinct(country) from customers;
+
+        - from payments table, select the minimum payment made.
+
+        query: select min(amount) from payments;
+
+        - select all the columns from payments table where the amount is minimum.
+    
+        query: select * from payments where amount = (select min(amount) from payments);
+
+              select * from payments where amount = 615.45;
+
+        - from payments table, select the maximum payment made.
+
+        query: select max(amount) from payments;
+
+        - select all the columns from payments table where the amount is maximum.
+
+        query: select * from payments where amount = (select max(amount) from payments);
+
+                select * from payments where amount = 120166.58;
+        
+        - select the totalAmount from payments table grouped by customerNumber.
+
+        query: select customerNumber, sum(amount) as totalAmount from payments group by customerNumber;
+
+        - select the totalAmount from payments table grouped by year
+
+        query: select year(paymentDate) as year, sum(amount) as totalAmount from payments group by year;
+
+        - select the totalAmount from payments table grouped by customerNumber.
+
+        query: select customerNumber, sum(amount) as totalAmount from payments group by customerNumber;
+
+        - from the above query, arrange the results in descending order of totalAmount.
+
+        query: select customerNumber, sum(amount) as totalAmount from payments group by customerNumber order by totalAmount desc;
+
+        - from the above query, select the top 3 customers with highest totalAmount.
+
+        query: select customerNumber, sum(amount) as totalAmount from payments group by customerNumber order by totalAmount desc limit 3;
+
+        - from the same result, select the second top 3 customers with highest totalAmount.
+
+        query: select customerNumber, sum(amount) as totalAmount from payments group by customerNumber order by totalAmount desc limit 3 offset 3;
+
+
         
     4. TCL: Transaction Control Language
         a. COMMIT: To save the changes
