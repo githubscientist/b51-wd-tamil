@@ -255,7 +255,7 @@
         - phone: varchar(255), not null, unique
         - address: varchar(255), not null
 
-    2. Create a database called "mydb" and create a table called "courses" with the following columns:
+    2. create a table called "courses" with the following columns:
 
         - id: int, primary key, auto_increment
         - name: varchar(255), not null
@@ -294,4 +294,131 @@
         5, 2, 2
 
     7. Write a query to select all the students who have enrolled for the course "Java".
-*/  
+
+        select s.* from students s inner join student_courses sc on s.id = sc.student_id inner join courses c on sc.course_id = c.id where c.name = "Java";
+*/
+
+/*
+    Database Model Design for an Online Bookstore.
+
+    - the bookstore sells books and each book can belong to multiple genres.
+    - customers can place orders and each order can contain multiple books
+    - each customer can have multiple addresses
+    - an address can be associated with multiple customers
+    - each book has multiple authors
+    - an author can write multiple books
+
+    List of tables:
+
+    1. books
+    2. genres
+    3. books_genres
+    4. customers
+    5. addresses
+    6. customers_addresses
+    7. authors
+    8. books_authors
+    9. orders
+    10. orders_books
+    11. customers_orders
+
+
+    list of tables and columns:
+
+    1. books
+        - id: int, primary key, auto_increment
+        - title: varchar(255), not null
+        - description: text
+        - price: int, not null
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+    
+    2. genres
+        - id: int, primary key, auto_increment
+        - name: varchar(255), not null
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+    
+    3. books_genres
+        - id: int, primary key, auto_increment
+        - book_id: int, foreign key references books(id)
+        - genre_id: int, foreign key references genres(id)
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+    
+    4. customers
+        - id: int, primary key, auto_increment
+        - first_name: varchar(255), not null
+        - last_name: varchar(255), not null
+        - email: varchar(255), not null, unique
+        - phone: varchar(255), not null, unique
+        - password: varchar(255), not null
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+    
+    5. addresses
+        - id: int, primary key, auto_increment
+        - address: text, not null
+        - city: varchar(255), not null
+        - state: varchar(255), not null
+        - country: varchar(255), not null
+        - pincode: varchar(255), not null
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+    
+    6. customers_addresses
+        - id: int, primary key, auto_increment
+        - customer_id: int, foreign key references customers(id)
+        - address_id: int, foreign key references addresses(id)
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+    
+    7. authors
+        - id: int, primary key, auto_increment
+        - first_name: varchar(255), not null
+        - last_name: varchar(255), not null
+        - email: varchar(255), not null, unique
+        - phone: varchar(255), not null, unique
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+    
+    8. books_authors
+        - id: int, primary key, auto_increment
+        - book_id: int, foreign key references books(id)
+        - author_id: int, foreign key references authors(id)
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+    
+    9. orders
+        - id: int, primary key, auto_increment
+        - customer_id: int, foreign key references customers(id)
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+
+    10. orders_books
+        - id: int, primary key, auto_increment
+        - order_id: int, foreign key references orders(id)
+        - book_id: int, foreign key references books(id)
+        - quantity: int, not null
+        - price: int, not null
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+    
+    11. customers_orders
+        - id: int, primary key, auto_increment
+        - customer_id: int, foreign key references customers(id)
+        - order_id: int, foreign key references orders(id)
+        - created_at: datetime, not null
+        - updated_at: datetime, not null
+
+*/
+
+/*
+    Foreign key while creating a table:
+
+    example: create table <table_name> (<column_name> <data_type> <constraint>, <column_name> <data_type> <constraint>, ..., foreign key (<column_name>) references <table_name>(<column_name>));
+
+    after creating a table:
+
+    example: alter table <table_name> add foreign key (<column_name>) references <table_name>(<column_name>);
+*/
