@@ -210,9 +210,40 @@
         - Joins are used to combine the data from two or more tables.
         - There are different types of joins:
             - Inner Join
-            - Outer Join
-                - Left Outer Join
-                - Right Outer Join
+
+            example: 
+
+            - from classicmodels database, payments table: do the following;
+
+            select customerNumber, sum(amount) as totalAmount from payments group by customerNumber order by totalAmount desc limit 10;
+
+            - now create a table from the above query
+
+            create table top10 as select customerNumber, sum(amount) as totalAmount from payments group by customerNumber order by totalAmount desc limit 10;
+
+            - join the top10 table with customers table to get the customer details.
+
+            select t.customerNumber, c.customerName, c.phone, c.country, t.totalAmount from top10 t inner join customers c on t.customerNumber = c.customerNumber;
+
+            - select and show the customer details whose customerNumber is 146;
+
+            select * from customers where customerNumber = 146;
+
+            - delete the customer with customerNumber 146 from customers table.
+
+            delete from customers where customerNumber = 146;
+
+            - now join the top10 table with customers table to get the customer details.
+
+            select t.customerNumber, c.customerName, c.phone, c.country, t.totalAmount from top10 t inner join customers c on t.customerNumber = c.customerNumber;
+
+            - Left Join
+
+            select t.customerNumber, c.customerName, c.phone, c.country, t.totalAmount from top10 t left join customers c on t.customerNumber = c.customerNumber;
+
+            - Right Join
+
+            select t.customerNumber, c.customerName, c.phone, c.country, t.totalAmount from top10 t right join customers c on t.customerNumber = c.customerNumber;
     
     Example Exercise to practice Joins:
 
