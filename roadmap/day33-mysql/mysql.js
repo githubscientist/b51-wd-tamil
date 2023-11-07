@@ -204,3 +204,63 @@
         c. SAVEPOINT: To save temporarily
         d. SET TRANSACTION: To specify the characteristics of the transaction
 */
+
+/*
+    Joins:
+        - Joins are used to combine the data from two or more tables.
+        - There are different types of joins:
+            - Inner Join
+            - Outer Join
+                - Left Outer Join
+                - Right Outer Join
+    
+    Example Exercise to practice Joins:
+
+    1. Create a database called "mydb" and create a table called "students" with the following columns:
+        - id: int, primary key, auto_increment
+        - name: varchar(255), not null
+        - age: int, not null
+        - email: varchar(255), not null, unique
+        - phone: varchar(255), not null, unique
+        - address: varchar(255), not null
+
+    2. Create a database called "mydb" and create a table called "courses" with the following columns:
+
+        - id: int, primary key, auto_increment
+        - name: varchar(255), not null
+        - duration: int, not null
+        - fees: int, not null
+
+    3. insert the following records into the table "students":
+        1, "John", 25, "john@abc.com", "1234567890", "123, abc street, xyz city, 12345"
+        2, "Smith", 26, "smith@abc.com", "1234567891", "124, abc street, xyz city, 12345"
+        3, "Mary", 27, "mary@abc.com", "1234567892", "125, abc street, xyz city, 12345"
+        4, "Tom", 28, "tom@abc.com", "1234567893", "126, abc street, xyz city, 12345"
+        5, "Jerry", 29, "jerry@abc.com", "1234567894", "127, abc street, xyz city, 12345"
+        6, "Peter", 30, "peter@abc.com", "1234567895", "128, abc street, xyz city, 12345"
+
+    4. insert the following records into the table "courses":
+
+        1, "Java", 3, 3000
+        2, "Python", 3, 3000
+        3, "JavaScript", 3, 3000
+        4, "React", 3, 3000
+        5, "Angular", 3, 3000
+        6, "Node", 3, 3000
+
+    5. Create a table called "student_courses" with the following columns:
+
+        - id: int, primary key, auto_increment
+        - student_id: int, foreign key references students(id)
+        - course_id: int, foreign key references courses(id)
+
+    6. insert the following records into the table "student_courses":
+
+        1, 1, 1
+        2, 1, 2
+        3, 1, 3
+        4, 2, 1
+        5, 2, 2
+
+    7. Write a query to select all the students who have enrolled for the course "Java".
+*/  
