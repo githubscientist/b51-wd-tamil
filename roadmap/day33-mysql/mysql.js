@@ -422,3 +422,79 @@
 
     example: alter table <table_name> add foreign key (<column_name>) references <table_name>(<column_name>);
 */
+
+/*
+    Normalization:
+        - Normalization is a process of organizing the data in the database.
+        - The goal of normalization is to reduce the data redundancy (duplicate data) and increase the data integrity (accuracy and consistency of the data).
+        - There are different levels of normalization:
+            - 1NF: First Normal Form
+            - 2NF: Second Normal Form
+            - 3NF: Third Normal Form
+            - BCNF: Boyce-Codd Normal Form
+            - 4NF: Fourth Normal Form
+            - 5NF: Fifth Normal Form
+            - 6NF: Sixth Normal Form
+        
+        Example: 
+            given a table called "studentCourses" with the following columns:
+                - studentId: int
+                - studentName: varchar(255)
+                - courseId: int
+                - courseName: varchar(255)
+                - courseDuration: int
+
+            studentCourses table data example:
+
+            studentId   studentName     courseId    courseName      courseDuration
+            1           John            1           Java            3
+            1           John            2           Python          3
+            1           John            3           JavaScript      3
+            2           Smith           1           Java            3
+            2           Smith           2           Python          3
+            3           Mary            1           Java            3
+
+            After 1st Normal form:
+
+            students table:
+            
+            studentId   studentName
+            1           John
+            2           Smith
+            3           Mary
+
+            courses table:
+
+            courseId    courseName      courseDuration
+            1           Java            3
+            2           Python          3
+            3           JavaScript      3
+
+            studentCourses table:
+
+            studentId   courseId
+            1           1
+            1           2
+            1           3
+            2           1
+            2           2
+            3           1
+            
+            If a table has to be in 1st Normal Form:
+                - it should not have any repeating columns.
+                - all columns must have atomic values.
+                - the order in which data is stored does not matter.
+            
+            - the above table is not in 1NF as it has repeating columns.
+
+            - to make it 1NF, we need to split the table into two tables.
+
+            - table1: students
+                - studentId: int
+                - studentName: varchar(255)
+
+            - table2: courses
+                - courseId: int
+                - courseName: varchar(255)
+                - courseDuration: int
+*/
