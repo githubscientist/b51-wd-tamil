@@ -50,4 +50,22 @@
         {name: "John", age: 25, city: "New York"}
         {name: "Peter", age: 30, city: "London"}
         {name: "Sam", age: 21, city: "Sydney"}
+    
+    find all documents in the collection "users"
+        query: db.users.find()
+    
+    find documents with the name "John" in the collection "users"
+        query: db.users.find({name: "John"})
+    
+    projection:
+        query: db.users.find({name: "John"}, {name: 1, _id: 0})
+    
+    operators:
+        - $eq - equal to
+        - $gt - greater than
+        - $gte - greater than or equal to
+        - $lt - less than
+        - $lte - less than or equal to
+        - $ne - not equal to
+        - $in - in
 */
