@@ -195,13 +195,14 @@
         - from the same result, select the second top 3 customers with highest totalAmount.
 
         query: select customerNumber, sum(amount) as totalAmount from payments group by customerNumber order by totalAmount desc limit 3 offset 3;
-
-
         
     4. TCL: Transaction Control Language
         a. COMMIT: To save the changes
+            query: commit;
         b. ROLLBACK: To undo the changes
+            query: rollback [to savepoint_name];
         c. SAVEPOINT: To save temporarily
+            query: savepoint <savepoint_name>;
         d. SET TRANSACTION: To specify the characteristics of the transaction
 */
 

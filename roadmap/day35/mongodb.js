@@ -69,3 +69,79 @@
         - $ne - not equal to
         - $in - in
 */
+
+let person = {
+    name: 'sathish',
+    courses: 5
+}
+
+console.log(JSON.stringify(person));
+
+let jsonString = '{"name":"sathish","courses":5}';
+
+console.log(JSON.parse(jsonString));
+
+/*
+    basic cursor methods - map, toArray, pretty, forEach, limit, count, sort
+
+    map:
+        query: db.users.find().map(function(u) { return u.name; })
+
+        explanation: returns an array of names of all the documents in the collection "users"
+    
+    toArray:
+        query: db.users.find().toArray()
+
+        explanation: returns an array of all the documents in the collection "users"
+    
+    pretty:
+        query: db.users.find().pretty()
+
+        explanation: returns all the documents in the collection "users" in a formatted way
+    
+    forEach:
+        query: db.users.find().forEach(function(u) { print(u.name); })
+
+        explanation: prints the name of all the documents in the collection "users"
+    
+    limit:
+        query: db.users.find().limit(2)
+
+        explanation: returns the first 2 documents in the collection "users"
+    
+    count:
+        query: db.users.find().count()
+
+        explanation: returns the number of documents in the collection "users"
+    
+    sort:
+        query: db.users.find().sort({name: 1})
+
+        explanation: returns all the documents in the collection "users" sorted in ascending order of name
+        (change 1 to -1 to sort in descending order)
+    
+    Aggregation:
+        - Aggregation operations process data records and return computed results.
+        - Aggregation operations group values from multiple documents together, and can perform a variety of operations on the grouped data to return a single result.
+        - MongoDB provides three ways to perform aggregation: the aggregation pipeline, the map-reduce function, and single purpose aggregation methods.
+
+    group:
+        query: db.users.aggregate([{$group: {_id: "$city", count: {$sum: 1}}}])
+
+        explanation: returns the number of documents in the collection "users" grouped by city
+    
+    match:
+        query: db.users.aggregate([{$match: {city: "New York"}}])
+
+        explanation: returns all the documents in the collection "users" with city as "New York"
+    
+    deleteOne:
+        query: db.users.deleteOne({name: "John"})
+
+        explanation: deletes the first document in the collection "users" with name as "John"
+    
+    deleteMany:
+        query: db.users.deleteMany({name: "John"})
+
+        explanation: deletes all the documents in the collection "users" with name as "John"
+*/
